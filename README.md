@@ -24,15 +24,15 @@ Below is the structure of the **POST Request** that generates the sustainability
 - Response body:
 ```json
 {
-    "id": UUID,
-    "city": string,
-    "country": string,
-    "latitude": number,
-    "longitude": number,
-    "description": string,
-    "sites": string,
-    "recommendations": string,
-    "generated_at": Datetime
+    "id": "uuid",
+    "city": "string",
+    "country": "string",
+    "latitude": "number",
+    "longitude": "number",
+    "description": "string",
+    "sites": "string",
+    "recommendations": "string",
+    "generated_at": "datetime"
 }
 ```
 
