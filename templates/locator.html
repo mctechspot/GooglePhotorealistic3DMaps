@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ecocité - Locator</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="./static/media/logo-light-square.png">
+  <script src="scripts/script.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body onload="runLocatorInitialisers();" class="main-layout">
+  <header>
+    <div id="header-content" class="header-content">
+      <div id="header-content-left">
+        <a href="/" id="header-link">
+          <div id="header-logo-container">
+            <img id="header-logo" src="./static/media/logo-dark.png" height="50" width="auto" alt="Ecocité Logo" />
+          </div>
+        </a>
+      </div>
+      <div id="header-content-right">
+        <div id="footer-links-container">
+          <a href="locator.html">Locator</a>
+          <span>&bull;</span>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main-content-container">
+    <div id="main-content" class="main-content">
+      <p class="heading-1 text-center">Locator</p>
+      <form method="POST" onsubmit="fetchLocation(event); return false;">
+        <p class="text-green-main text-center">Enter a place and we will give you sustainability insights.</p><br>
+        <div id="prompt-form-content-wrapper">
+          <input type="text" id="prompt-input" class="prompt-input input-text" name="prompt-input" autocomplete="off"
+            placeholder='Enter a specific place like "Oslo" or a descriptive phrase like "Vast fjords."' />
+          <button type="submit" class="button" id="prompt-submit" class="prompt-submit">Go</button>
+        </div>
+      </form><br>
+      <div id="content-grand-container"></div>
+      <div id="generated-content-container" class="animate-bottom hidden">
+        <div id="initial-text-tag"></div>
+        <div id="city-country-tag"></div>
+        <div id="coordinates-tag"></div>
+        <a id="map-link" class="text-center" href="/locator.html" target="_blank"></a><br>
+        <p id="description-tag">
+      </div><br><br>
+      <div id="sites-tag"></div><br>
+      <div id="recommendations-tag"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div id="footer-content-left">
+        <p id="footer-text"></p>
+      </div>
+      <div id="footer-content-right">
+        <div id="footer-links-container">
+          <a href="locator.html">Locator</a>
+          <span>&bull;</span>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
