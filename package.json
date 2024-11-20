@@ -4,7 +4,8 @@
   "description": "google photorealistic 3d maps",
   "main": "server.mjs",
   "scripts": {
-    "test": "npm run dev"
+    "test": "npm run dev",
+    "start": "node server.mjs"
   },
   "keywords": [
     "google",
