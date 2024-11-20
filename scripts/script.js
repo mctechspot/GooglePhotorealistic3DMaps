@@ -43,7 +43,7 @@ const fetchLocation = async (event) => {
             <p class="text-green-main text-center">Hang tight while we generate sustainability insights!<p>
             </div>
             `;
-            const locationRes = await fetch(`http://127.0.0.1:3000/api/locate`, {
+            const locationRes = await fetch(`/api/locate`, {
                 body: JSON.stringify({ "prompt": promptValue.trim() }),
                 method: "POST",
                 headers: {
@@ -51,7 +51,11 @@ const fetchLocation = async (event) => {
                 }
             });
 
-            if (!locationRes.status > 199 && !locationRes.status < 300) {
+            if (locationRes.status === 503) {
+                contentGrandContainerElement.innerHTML = "";
+                contentGrandContainerElement.classList.remove("loader");
+                contentGrandContainerElement.innerHTML = `<span class="text-center">Oops! Model is overloaded. Try again soon.</span>`;
+            }else if (!locationRes.status > 199 && !locationRes.status < 300) {
                 contentGrandContainerElement.innerHTML = "";
                 contentGrandContainerElement.classList.remove("loader");
                 contentGrandContainerElement.innerHTML = `<span class="text-center">An error occured. Try again.</span>`;
